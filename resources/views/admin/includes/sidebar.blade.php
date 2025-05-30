@@ -87,30 +87,37 @@
                 @endif
 
                 <!-- Report Section -->
-                <li class="nav-header">Report</li>
-                <li class="nav-item {{ in_array($page, ['product-report', 'statistic-report']) ? 'menu-open' : '' }}">
-                    <a href="#" class="nav-link {{ in_array($page, ['product-report', 'statistic-report']) ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-tasks"></i>
-                        <p>
-                            Laporan
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('report.product') }}" class="nav-link {{ $page == 'product-report' ? 'active bg-primary' : '' }}">
-                                <i class="fas fa-coins mr-2 ml-3"></i>
-                                <p>Penjualan Produk</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('report.statistic') }}" class="nav-link {{ $page == 'statistic-report' ? 'active bg-primary' : '' }}">
-                                <i class="fas fa-chart-bar mr-2 ml-3"></i>
-                                <p>Statistik Data Penjualan</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+               <li class="nav-header">Report</li>
+                    <li class="nav-item {{ in_array($page, ['product-report', 'statistic-report', 'prediksi_bulan']) ? 'menu-open' : '' }}">
+                        <a href="#" class="nav-link {{ in_array($page, ['product-report', 'statistic-report', 'prediksi_bulan']) ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-tasks"></i>
+                            <p>
+                                Laporan
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('report.product') }}" class="nav-link {{ $page == 'product-report' ? 'active bg-primary' : '' }}">
+                                    <i class="fas fa-coins mr-2 ml-3"></i>
+                                    <p>Penjualan Produk</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('report.statistic') }}" class="nav-link {{ $page == 'statistic-report' ? 'active bg-primary' : '' }}">
+                                    <i class="fas fa-chart-bar mr-2 ml-3"></i>
+                                    <p>Statistik Data Penjualan</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('prediksi.form') }}" class="nav-link {{ $page == 'prediksi_bulan' ? 'active bg-primary' : '' }}">
+                                    <i class="fas fa-chart-line mr-2 ml-3"></i>
+                                    <p>Prediksi Keuntungan</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
 
                 <!-- Setting / Logout -->
                 <li class="nav-header">Setting</li>
@@ -128,3 +135,4 @@
         </nav>
     </div>
 </aside>
+=   

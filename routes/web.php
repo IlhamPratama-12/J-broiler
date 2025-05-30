@@ -29,6 +29,8 @@ Route::prefix('admin')->group(function () {
         Route::get('/', 'index')->middleware('guest');
         Route::post('/', 'login')->middleware('guest')->name('login');
         Route::post('logout', 'logout')->name('logout');
+
+        
     });
 
     Route::group(['middleware' => 'auth'], function () {
@@ -51,9 +53,12 @@ Route::prefix('admin')->group(function () {
         Route::get('sales/pending',             [SaleController::class, 'listPending'])->name('sales.pending');
         Route::resource('sales',                SaleController::class);
 
-        Route::get('reports/product/print',     [ReportController::class, 'productReportPrint'])->name('report.product.print');
-        Route::get('reports/product',           [ReportController::class, 'productReport'])->name('report.product');
-        Route::get('reports/statistic',         [StatisticController::class, 'statisticReport'])->name('report.statistic');
+        Route::get('reports/product/print',          [ReportController::class, 'productReportPrint'])->name('report.product.print');
+        Route::get('reports/product',                [ReportController::class, 'productReport'])->name('report.product');
+        Route::get('reports/statistic',              [StatisticController::class, 'statisticReport'])->name('report.statistic');
+        Route::get('reports/prediksi',               [PrediksiController::class, 'form'])->name('prediksi.form');
+        Route::post('reports/prediksi/proses',       [PrediksiController::class, 'processPrediksi'])->name('prediksi.process');
+
 
     });
 });
